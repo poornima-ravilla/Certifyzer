@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    /* background-image: url(back.jpg); */
+    background-image: linear-gradient(to right, rgb(56, 194, 253) , rgb(125, 246, 163));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* margin: 0; */
+    min-height: 100vh;
+    display: flex
+;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+.container {
+    width: 300px;
+    height: 400px;
+    margin: 0% auto;
+    padding: 30px;
+    background-color: rgb(255 255 255 / 41%);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(173 173 173);
+    display: grid
+;
+}
+h2 {
+    text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login {
+    width: 90%;
+    padding: 10px;
+    background-color: #1267b8;;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5% 5%;
+}
+.login:hover {
+    background-color: rgb(209, 206, 206);
+    color: black;
+    border: 1px solid black;
+
+}
+.forgot-password {
+    text-align: center;
+    /* margin-top: 10px; */
+}
+.forgot-password a {
+    color:rgb(61, 60, 60);
+    text-decoration: none;
+}
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+.forgot-password-form {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+.forgot-password-form input[type="email"] {
+    margin-bottom: 10px;
+}
+.message {
+    color: green;
+    font-style: italic;
+}
+.error-message,#errorMessage {
+    color: rgb(235, 14, 14);
+    font-style: italic;
+    margin: 5% 13%;
+}
+#logoutMessage{
+    font-size: larger;
+    font-style: oblique;
+    display: flex;
+    justify-content: center;
+    color: #230000;
+    font-family: ui-rounded;
+    text-align: center;
+}
+.forgot{
+    margin:5% auto ;
+    display:flex;
+    background: linear-gradient(to bottom, #fbfdfb0e, #ced1ce0c);
+    /* color: rgb(0, 0, 0);  */
+    border: none; 
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3), 
+                inset 0px 4px 6px rgba(255, 255, 255, 0.6);
+    cursor: pointer; 
+    width:max-content;
+}
+#username-message{
+    justify-self: center;
+}
+.passworddata{
+    font-size: 120%;
+    font-style: oblique;
+
+}
+.head{
+    font-size: 200%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position:absolute;
+    top:10%;
+    left:28%;
+    margin:0%;
+}
+
+   
+.headcon{
+    display: flex
+;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    align-items: center;
+    /* justify-content: center; */
+    margin: 0% 0%;
+    margin-top:25px;
+    
+}
+.headimage{
+    position:absolute;
+    top:23.5%;
+    left:44.5%;
+    
+}
+#desc{
+    display:block;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.head{
+    position:absolute;
+    top:6%;
+    left:41%;
+    font-size:45px;
+    font-weight:500;   
+    font-family:Georgia, 'Times New Roman', Times, serif; 
+    color:rgb(5, 5, 87);
+}
+#desc{
+    position:absolute;
+    left:40%;
+    top:11%;
+    font-size:19px;
+    width:100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgba(5, 5, 87,0.5);
+       
+}

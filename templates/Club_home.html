@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Club_home.css') }}">
+</head>
+<body>
+    <div id="body">
+    
+        <h1 onclick="backhome()" class="welcome">Welcome <span class="clubname">{{username}}</span></h1>
+    
+    <div id="layer1">
+    <div class="evediv">
+            <h1 class="eve">Events</h1> 
+            <div class="evedisp">
+            <ul>
+                {% for event in events %}
+                <li class="viewli">
+                    {{ event['evename'] }}
+                    <button onclick="EventsView('{{ event['eveName'] }}', '{{ event['date'] }}', '{{ event['points'] }}', '{{ event['desc'] }}')" id="view">
+                        <img src="{{ url_for('static', filename='CSS/eye.png') }}" height="30" width="30">
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+            </div>            
+    </div>
+    <div class="rightside">
+        <div class="buts">
+            <div class="buttonedit">
+                <button class="buttons" onclick="addeve()"><span class="buttontext">Add Events</span></button>
+            </div>
+            <div class="buttonadd">
+                <button class="buttons" onclick="editeve()"><span class="buttontext">Edit Events</span></button>
+            </div>
+        </div>       
+        <div id="rightbelow">
+            <div class="clubdet">
+                
+                <div class="clubdiv"><h1 class="club">Club Details</h1>       </div>
+                <div class="profile">
+                    <img id="profileImage" src="/profileImage?username={{ username }}" alt="Click to upload" />
+        <form action="/upload_image" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="username" value="{{ username }}">
+            <input type="file" id="imageUpload" name="file" accept="image/*" onchange="this.form.submit()">
+        </form>
+                </div>
+            </div>
+            
+            <div class="info">
+                <p>Faculty Coordinator: <strong>{{ club_det['faculty'] }}</strong></p>
+                <p>President: <strong>{{ club_det['president'] }}</strong></p>
+                <p>Club Email ID: <strong>{{ club_det['email'] }}</strong></p>
+                <p>Club Contact No: <strong>{{ club_det['contact'] }}</strong></p>
+            </div>
+            <button id="view" onclick="editclub('{{ club_det['faculty'] }}', '{{ club_det['president'] }}', '{{ club_det['email'] }}', '{{ club_det['contact'] }}')"><img class="edit" src="{{ url_for('static', filename='CSS/Edit.svg') }}"  height="30" width="30"></button>
+        </div>
+        <div id="rightbelow3">
+            <button id="closeclub"><img src="/static/CSS/closee.png" height="30" width="30"></button>
+
+            
+       <div class="inner">
+        <h1 style="font-weight: bold; text-align: center;">Edit Club Details</h1>
+       <form action="/editclub" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="username" value="{{ username }}">
+
+                   <label >Faculty Cordinator :
+                       <input class="inputs" type="text" placeholder="Faculty_Name" name="faculty">
+                   </label>
+                   <label>President :
+                       <input class="inputs" type="text" placeholder="President_Name" name="president">
+                   </label>
+                   <label>Club EmailID :
+                       <input class="inputs" type="text" placeholder="Club_EmailID" name="email">
+                   </label>
+                   <label>Club Contact No : :
+                       <input class="inputs" type="number" placeholder="Contact Number" name="contact">
+                   </label>
+                   <button class="buttonsadd"><span class="buttontext">Save</span></button>
+               </form>
+       </div>
+   
+        </div>
+        <div id="rightbelow2">
+            <button id="close"><img src="/static/CSS/closee.png" height="30" width="30"></button>
+
+            
+       <div class="inner">
+        <h1 style="font-weight: bold; text-align: center;">Event Details</h1>
+       
+                    <p>Event Name : <strong id="eventName" ></strong></p>
+                    <p>Organized Date: <strong id="eventDate"></strong></p>
+                    <p>Activity Points: <strong id="eventPoints"></strong></p>
+                    <p>Description: <strong id="eventDesc"></strong></p>
+                                      
+             
+       </div>
+   
+        </div>
+        
+    </div>
+    
+    
+    </div>
+    <div id="layer2">
+        
+
+        <div id="inneradd">
+            <h1 style="font-weight: bold; text-align: center;">Add Events<button id="closeadd"><img src="/static/CSS/closee.png" height="30" width="30"></button></h1>
+            <!-- form for add events  -->
+           <form action="/addEvent" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="username" value="{{ username }}">
+                       <label >Event Name :
+                           <input id="evename" name="evenamee"  class="inputs" type="text" placeholder="Event_Name" required>
+                       </label>
+                       <label>Organized Date :
+                           <input id="date" name="date" class="inputs" type="date" placeholder="Organized_Date" required min="2020-01-01" id="input_date">
+                       </label>
+                       <label>Activity Points :
+                           <input id="points" name="points" class="inputs" type="number" placeholder="Activity Points" required min="0" max="20" >
+                       </label>
+                       <label>Description :
+                           <input id="desc" name="desc" class="inputs" type="text" placeholder="Description" >
+                       </label>
+                       <label>Upload students list :
+                        <input id="list" name="list" class="inputs" type="file" placeholder="Excel file" required accept=".xls, .xlsx">
+                    </label>
+                    <button class="buttonsadd"><span class="buttontext">Add Event</span></button>
+                   </form>
+           </div>
+    </div>
+    <div id="layer3">
+        
+
+        <div id="inneredit" >
+            <h1 style="font-weight: bold; text-align: center;">Edit Events<button id="closeedit"><img src="/static/CSS/closee.png" height="30" width="30"></button></h1>
+
+            <!-- <li class="viewli">display of all events ffrom dbg <button onclick="Eventsedit()" id="eveedit"><img src="static/CSS/Edit.svg" height="30" width="30"></button></li> -->
+            <ul>
+                {% for event in events %}
+                <li class="viewli">{{ event['evename'] }}
+                    <button onclick="Eventsedit({{ event['id'] }}, '{{ event['evename'] }}', '{{ event['date'] }}', '{{ event['points'] }}', '{{ event['desc'] }}', '{{ event['filepath'] }}')" id="eveedit">
+                        <img src="{{ url_for('static', filename='CSS/Edit.svg') }}" height="30" width="30">
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+           </div>
+           
+    </div>
+    <button onclick="logout()"  id="logoutbtn"><h3>Log Out</h3></button>
+    
+</div>
+    <div id="layer4">
+
+        <div class="inneredit2">
+        <button id="closeedit2"><img src="/static/CSS/closee.png" height="30" width="30"></button>
+
+            <h1 style="font-weight: bold; text-align: center;"> <span class="clubbname"></span></h1>
+
+           <form action="/update_event" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="username" value="{{ username }}">
+
+                        <input type="hidden" name="eventId">
+                        <label >Event Name :
+                           <input class="inputs" type="text"   name="evetname" >
+                       </label>
+                       <label>Organized Date :
+                           <input class="inputs" type="date" name="evedate">
+                       </label>
+                       <label>Activity Points :
+                           <input class="inputs" type="number" name="evepoints" >
+                       </label>
+                       <label>Description :
+                           <input class="inputs" type="text" name="evedesc" >
+                       </label>
+                       <label>Upload students list :
+                        <input class="inputs" type="file" name="evetfile" accept=".xls, .xlsx" >
+                        <p href=# download>Previously Selected File : <strong id="filu"  ></strong></p>
+                        
+                    </label>
+                    <button  class="buttonsadd"><span class="buttontext">Save</span></button>
+                   </form>
+           </div>
+           
+    </div>
+
+    
+        
+
+</body>
+<script src="{{ url_for('static', filename='JS/club_home.js') }}">
+    
+</script>
+</html>

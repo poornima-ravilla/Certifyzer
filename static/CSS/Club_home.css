@@ -1,0 +1,281 @@
+body {
+    background-image: url('clubback.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 0; 
+    min-height: 100vh;
+    font-family:Georgia, 'Times New Roman', Times, serif,sans-serif;
+    display:grid;
+}
+.welcome{
+    font-weight: bold;
+    text-align: center;
+}
+.clubname{
+    font-style: italic;
+}
+#logoutbtn{
+    /* height:fit-content; */
+    /* width: fit-content; */
+    display: flex;
+    justify-self: center;
+    margin:0.5%;
+    background: linear-gradient(to bottom, #fbfdfb0e, #ced1ce0c);
+    /* color: rgb(0, 0, 0);  */
+    border: none; 
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3), 
+                inset 0px 4px 6px rgba(255, 255, 255, 0.6);
+    cursor: pointer; 
+    width:max-content;
+
+}
+#logoutbtn:hover{
+    display: flex;
+    justify-self: center;
+    margin:0.5%;
+    background: linear-gradient(to bottom, #ea340670, #e63c04fa);
+    /* color: rgb(0, 0, 0);  */
+    border: none; 
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3), 
+                inset 0px 4px 6px rgba(255, 255, 255, 0.6);
+    cursor: pointer; 
+    width:max-content;
+}
+#layer1{
+    margin: 0% 5%;
+    padding:0%;
+    background-color: rgb(255 255 255 / 20%);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* flex-direction: column-reverse; */
+}
+.eve{
+    display: grid;
+    justify-content: center;
+}
+.evediv{
+    /* max-width: 30vw;
+    width:20vw; */
+    max-height: max-content;
+    margin:3%;
+}
+.buts{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+.buttons{
+    margin:5%;
+    background: linear-gradient(to bottom, #fbfdfb0e, #ced1ce0c);
+    /* color: rgb(0, 0, 0);  */
+    border: none; 
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3), 
+                inset 0px 4px 6px rgba(255, 255, 255, 0.6);
+    cursor: pointer; 
+    width:max-content;
+   
+}
+.buttontext{
+    font-size: 150%;
+    font-weight: bold;
+}
+.buttons:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 
+                inset 0px 6px 8px rgba(255, 255, 255, 0.8);
+    background: linear-gradient(to bottom, #f2ecf5ba, #f5e6fa24); 
+   
+}
+.buttons:active {
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2); 
+    transform: translateY(2px); 
+}
+.evedisp{
+    padding:20% 10%;
+    background-color: #f9f9f935;;
+    border-radius: 5%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), inset 0px 6px 8px rgba(255, 255, 255, 0.8);
+    width:fit-content;
+}
+#view{
+    float:right;
+    border: none;
+    background-color: #ced1ce00;
+    cursor: pointer;
+}
+.viewli{
+    display:flex;
+    font-weight: bold;
+    justify-content: space-between;
+}
+.clubdet{    
+    display: flex;
+    justify-content: space-between;
+    
+}
+.rightside{
+    margin:3%;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    
+}
+.profile {
+    cursor: pointer;
+    text-align: center; 
+}
+
+#profileImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#imageUpload {
+    display: none; 
+}
+.clubdiv{
+    display: flex;
+    justify-content: center;
+    
+    flex: 1; /* Take up all remaining space */
+    
+}
+#rightbelow,#rightbelow2,#rightbelow3{
+    padding:5%;
+    /* flex-grow: 1; */
+    background-color: #f9f9f935;
+    /* border-radius: 5%; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), inset 0px 6px 8px rgba(255, 255, 255, 0.8);
+}
+form>label{
+    display: block;
+    padding: 1% 0%;
+    font-size: 120%;
+}
+.inputs{
+    /* border: none; */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    /* box-shadow: 0px 7px 19px rgba(0, 0, 0, 0.2), inset 0px 0px 0px rgba(255, 255, 255, 0.8); */
+    border-bottom-width:thin;
+    border-top-width: 0vw;
+    border-left-width: 0vw;
+    border-right-width: 0vw;
+}
+.edit{
+    float: right;
+}
+#close{
+    float:right;
+    /* margin:5% 5% -5% 0%; */
+    border: none;
+    background-color: #fffafa00;
+}
+/* .inner{
+    padding:4%;
+    border-radius: 5%;
+    background-color: rgba(249, 251, 251, 0.613);
+} */
+
+#rightbelow2{
+    /* border-radius: 4%; */
+    padding: 5%;
+}
+#inneredit{
+    /* background-color: rgba(251, 251, 251, 0.705); */
+    margin: 4% 4% 4% 4%;
+    /* border-radius: 2%; */
+    padding:2%;
+    /* border-radius: 4%; */
+
+    
+}
+#inneradd{
+    /* background-color: rgba(251, 251, 251, 0.705); */
+    /* margin: 4% 4% 4% 4%; */
+    /* border-radius: 2%; */
+    padding:2%;
+    /* border-radius: 4%; */
+}
+#layer2,#layer3,#layer4{
+    margin: 0% 5%;
+    padding:3%;
+    /* background-image:url("colorful.webp"); */
+    
+    height: fit-content;
+    background-color: #ffffff75;
+    /* border-radius: 5%; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), inset 0px 6px 8px rgba(255, 255, 255, 0.8);
+}
+}
+#layer3{
+    display: inline-block;
+    position: relative;
+    padding:1%;
+    border-radius:5%;
+
+}
+#layer4{
+    z-index: 1;
+    /* background-image: none; */
+    border-radius:5%;
+    place-self: center;
+    display: block;
+    position: absolute;
+    width:50vw;
+
+    
+}
+#closeadd,#closeedit,#closeedit2,#closeclub{
+    float: inline-end;
+    /* margin:5%; */
+    border: none;
+    background-color: #fffafa00;
+}
+.buttonsadd{
+    margin:5% auto auto;
+    display:flex;
+    background: linear-gradient(to bottom, #fbfdfb0e, #ced1ce0c);
+    /* color: rgb(0, 0, 0);  */
+    border: none; 
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3), 
+                inset 0px 4px 6px rgba(255, 255, 255, 0.6);
+    cursor: pointer; 
+    width:max-content;
+}
+#eveedit{
+    
+    border: none;
+    background-color: #ced1ce00;
+    cursor: pointer;
+    
+}
+.disabled {
+    pointer-events: none; 
+    opacity: 0.6;    
+    visibility: hidden;  
+}
+#body{
+    z-index: 0;
+}
+.inneredit2{
+    /* background-color: rgba(255, 255, 255, 0.526);
+     */
+    padding:10%;
+    border-radius: 4%;
+}

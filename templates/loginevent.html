@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/loginevent.css') }}">
+    
+</head>
+<body>
+    
+    <div class="headcon">
+        <div class="head">CERTIFYZER</div>
+        <p id="desc">AICTE points authentication system</p>
+    </div>
+    <br><br><br><br><br><br><br>
+
+    <div class="container">
+        <div class="headcon">
+           
+            <div class="headimage"><img src="/static/CSS/newlogo.png" height="30% " width="30%" ></div>
+            
+        </div>
+        <br>
+        <br>
+        
+        
+        <h2>Login</h2>
+        <form action="/" method="POST">
+            <label for="email">Username:</label>
+            <input type="email" name="email" id="emaill" required >
+            <div id="username-message" style="color: red; display: none;">
+                <p>Please enter your username </p>
+            </div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            
+            <input class="login" type="submit" value="Login">
+        </form>
+        {% if error %}
+        <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <div class="forgot-password">
+            <a href="javascript:void(0)" onclick="promptForUsername()">Forgot Password?</a>
+        </div>
+        <div class="forgot-password-form" id="forgotPasswordForm">
+            <h3 class="passworddata">Password Related Data Will Be Sent To Email</h3>
+            <form id="forgotform" action="/forgot-password" method="POST">
+
+                <button id="sendmail" class="forgot" type="submit">Send Email</button>
+                 
+                <div id="loading" style="display:none;">
+                    <img src="https://i.gifer.com/YmvJ.gif" alt="Loading..." height="50%" width="80%"/>
+                    <p>LOADING.....</p>
+                </div>
+
+                <div class="forgot-password" id="cancel">
+                    <a href="javascript:void(0)" onclick="toggleForgotPasswordForm()">Cancel</a>
+                </div>
+            </form>
+            
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+        <br>
+        {% if request.args.get('message') %}
+        <div id="logoutMessage">{{ request.args.get('message') }}</div>
+    {% endif %}
+        <br>
+</div>
+
+</body>
+<script src="{{ url_for('static', filename='JS/loginevent.js') }}"></script>
+
+</html>
+

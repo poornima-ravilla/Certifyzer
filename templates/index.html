@@ -1,0 +1,34 @@
+<!DOCTYPE html id = "mainhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+    
+</head>
+<!--<body background="https://img.freepik.com/premium-photo/abstract-blurry-background-high-quality-image-download_555090-15094.jpg">
+-->
+<body id="mainbody">
+<p id="heading">CERTIFYZER</p>
+    <div class="wrapper">
+        
+        <!-- Search Form Container -->
+        <div class="container">
+            <h1 id="student">Search Student</h1>
+            <form id="searchStudentForm" onsubmit="handleFormSubmit(event)">
+                <input type="text" class="inputs" id="eventname" name="eventname" placeholder="Enter event name" required>
+                <input type="text" class="inputs" id="studentname" name="stud_name" placeholder="Enter student name" required>
+                <div class="mutiplebuttons">
+                    <button type="submit" class="buttons">Search</button>
+                    <button type="button" class="buttons" id="back-button" onclick="goBack()">Clear</button>
+                </div>
+            </form>
+        </div>
+        <!-- Results Div -->
+        <div id="results" class="results"></div>
+    </div>
+    <a href="{{ url_for('logout') }}"><button id="logout-button" onclick="logout()">Logout</button></a>
+</body>
+<script src="{{ url_for('static', filename='JS/mentor.js') }}"></script>
+</html>
