@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Login Page 
 
 # secret Key for invalid password message
-app.secret_key='Invalid_PasssecretKey'
+app.secret_key='YourSecretKey'
 
 # Function to get username password data 
 def get_mentor_from_db():
@@ -51,18 +51,18 @@ def send_email(to_email, subject, body,value):
     smtp.starttls()
 
     # Login with your email and password (use an app-specific password if 2FA is enabled)
-    smtp.login('my157mail@gmail.com', 'qmdo tzfn buey cpxf')
+    smtp.login('Your@gmail.com', 'code')
 
     # Build the message
     msg = MIMEMultipart()
-    msg['From'] = 'my157mail@gmail.com'
+    msg['From'] = 'your@gmail.com'
     msg['To'] = to_email
     msg['Subject'] = subject
     body_value = f"{body} Your verification code is {value}."
     msg.attach(MIMEText(body_value, 'plain'))
 
     # Send the email
-    smtp.sendmail('my157mail@gmail.com', to_email, msg.as_string())
+    smtp.sendmail('your@gmail.com', to_email, msg.as_string())
     smtp.quit()
 
 
